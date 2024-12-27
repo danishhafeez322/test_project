@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "880915329215",
+    "project_id": "all-in-one-d772a",
+    "firebase_url": "https://all-in-one-d772a-default-rtdb.firebaseio.com/",
+    "storage_bucket": "all-in-one-d772a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880915329215:android:38eb9b7406c2eae100160a",
+        "android_client_info": {
+          "package_name": "com.example.general_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwq3TG4gUdww5skiFXr7Ha1O4Hp7rLIvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880915329215:android:3f707ac642ec37d000160a",
+        "android_client_info": {
+          "package_name": "com.example.test_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwq3TG4gUdww5skiFXr7Ha1O4Hp7rLIvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

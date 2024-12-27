@@ -1,0 +1,7 @@
+<resources>
+    <string name="google_app_id" translatable="false">1:880915329215:android:3f707ac642ec37d000160a</string>
+    <string name="firebase_database_url" translatable="false">https://all-in-one-d772a-default-rtdb.firebaseio.com/</string>
+    <string name="gcm_defaultSenderId" translatable="false">880915329215</string>
+    <string name="google_api_key" translatable="false">AIzaSyAwq3TG4gUdww5skiFXr7Ha1O4Hp7rLIvE</string>
+    <string name="project_id" translatable="false">all-in-one-d772a</string>
+</resources>
