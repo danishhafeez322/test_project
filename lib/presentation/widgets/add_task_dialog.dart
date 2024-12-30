@@ -73,36 +73,25 @@ class _AddTaskDialogState extends ConsumerState<AddTaskDialog> {
         ElevatedButton(
           onPressed: () async {
             final title = _controller.text.trim();
-            if (title.isNotEmpty) {
-              final db = ref.watch(localDatabaseProvider);
-              final taskRepo = ref.watch(taskRepositoryProvider);
-              final id = const Uuid().v4(); // Unique ID for the task
-              final timestamp = DateTime.now();
-              await taskRepo.addTask(id, title, timestamp);
-              // await db.addTask(
-              //   TasksCompanion(
-              //     id: Value(id),
-              //     title: Value(title),
-              //     timestamp: Value(timestamp),
-              //   ),
-              // );
-              await db.into(db.tasks).insertOnConflictUpdate(
-                    TasksCompanion(
-                      id: Value(id),
-                      title: Value(title),
-                      timestamp: Value(timestamp),
-                    ),
-                  );
-              // final db = ref
-              //     .read(localDatabaseProvider); // Access the database provider
-              // await db.addTask(
-              //   TasksCompanion(
-              //     title: Value(title),
-              //     timestamp: Value(DateTime.now()), // Example timestamp
-              //   ),
-              // ); // Add task to the database
-              Navigator.pop(context);
+            if (title.isEmpty) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Task title cannot be empty!')),
+              );
+              return;
             }
+            final db = ref.watch(localDatabaseProvider);
+            final taskRepo = ref.watch(taskRepositoryProvider);
+            final id = const Uuid().v4(); // Unique ID for the task
+            final timestamp = DateTime.now();
+            await taskRepo.addTask(id, title, timestamp);
+            await db.into(db.tasks).insertOnConflictUpdate(
+                  TasksCompanion(
+                    id: Value(id),
+                    title: Value(title),
+                    timestamp: Value(timestamp),
+                  ),
+                );
+            Navigator.pop(context);
           },
           child: const Text('Add'),
         ),

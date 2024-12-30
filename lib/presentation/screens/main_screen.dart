@@ -87,6 +87,9 @@ class MainScreen extends ConsumerWidget {
             // Trigger real-time sync after adding a task
             final syncService = ref.read(syncServiceProvider);
             syncService.startRealTimeSync();
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Task added successfully!')),
+            );
           });
         },
         child: const Icon(Icons.add),
